@@ -42,5 +42,17 @@ class Model
 		header("Location: index.php");
 	}
 	
+	public function findAll($table)
+	{
+		$bdd = Model::getConnection();
+
+		$sql = $bdd->prepare("SELECT * FROM $table");
+
+		$sql->execute();
+
+		$resultat = $sql->fetchAll(PDO::FETCH_CLASS, $table);
+
+		return $resultat;
+	}
 }
 ?>

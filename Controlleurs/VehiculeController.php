@@ -27,5 +27,14 @@ class VehiculeController
 		}
 
 	}
+
+	public function list()
+	{
+		$vehicule = new Vehicule();
+
+		$liste_vehicules = $vehicule->findAll('vehicule');
+
+		require_once './Vues/Vehicule/list.php';
+	}
 }
 ?>

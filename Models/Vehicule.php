@@ -2,19 +2,21 @@
 	/**
 	 * 
 	 */
-	class Vehicule
+	require_once 'Model.php';
+
+	class Vehicule extends Model
 	{
 		
-		private $id;
+		private $id_vehicule;
 		private $marque;
 		private $modele;
 		private $couleur;
 		private $immatriculation;
 
 
-		public function getId()
+		public function getIdVehicule()
 		{
-			return $this->id;
+			return $this->id_vehicule;
 		}
 
 		public function getMarque()
@@ -62,7 +64,7 @@
 			$bdd = Model::getConnection();
 
 			$requete = $bdd->prepare("INSERT INTO vehicule (marque, modele, couleur, immatriculation) VALUES ('$marque','$modele','$couleur','$immatriculation')");
-			
+
 			if(!$requete->execute()){
 				die("ATTENTION!!!!");
 			}

@@ -18,6 +18,7 @@
 		}
 		/* LES VEHICULES - CRUD */
 		elseif($_GET['action'] == 'ajoutVehicule'){
+			$vehicule->list();
 			$vehicule->ajout();
 		}
 	}else{
