@@ -16,6 +16,19 @@ class Model
 		}
 		return $db;
 	}
+
+	public function findById($id, $table){
+		$bdd = $this->getConnection();
+
+		$sql = $bdd->prepare("SELECT * FROM $table WHERE id_".$table." = ".$id);
+
+		$sql->execute();
+
+		$resultat = $sql->fetchAll(PDO::FETCH_CLASS, $table);
+
+		return $resultat;
+	}
+	
 	
 }
 ?>

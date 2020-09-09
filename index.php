@@ -5,10 +5,19 @@
 
 	$conducteur = new ConducteurController();
 
-	/* Ajout de nouveau conducteur */
-	$conducteur->nouveauConducteur();
+	if (isset($_GET['action'])) {
 
-	/* Afficcher la liste des condcuteurs*/
-	$conducteur->listConducteur();
+		if($_GET['action'] == 'modifierConducteur'){
+			$conducteur->show($_GET['conducteurId']);
+		}
+	}else{
+		/* Afficcher la liste des conducteurs*/
+		$conducteur->listConducteur();
+
+		/* Ajout de nouveau conducteur */
+		$conducteur->nouveauConducteur();
+
+	}
+
 
 ?>

@@ -14,7 +14,7 @@
         echo "<td>".$conducteur->getIdConducteur()."</td>";
         echo "<td>".$conducteur->getPrenom()."</td>";
         echo "<td>".$conducteur->getNom()."</td>";
-        echo "<td><img src='./Ressources/img/edit.png' width='20'>
+        echo "<td><a href='?action=modifierConducteur&conducteurId=".$conducteur->getIdConducteur()."'><img src='./Ressources/img/edit.png' width='50'></a>
         <img src='./Ressources/img/delete.png' width='20'>
         </td>";
         echo "</tr>";

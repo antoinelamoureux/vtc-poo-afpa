@@ -60,5 +60,19 @@ class Conducteur extends Model
 
 		return $resultat;
 	}
+
+	public function update($id, $prenom, $nom)
+	{
+		$bdd = Model::getConnection();
+
+		$sql = $bdd->prepare("UPDATE conducteur SET prenom ='".$prenom."', nom ='".$nom."' WHERE id_conducteur =" .$id);
+		
+
+		if(!$sql->execute()){
+			die("ATTENTION!!!!");
+		}
+
+		header("Location: index.php");
+	}
 }
 ?>
