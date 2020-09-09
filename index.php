@@ -3,7 +3,10 @@
 	require_once "./Vues/header.html";
 	require_once "Controlleurs/ConducteurController.php";
 
+	require_once 'Controlleurs/VehiculeController.php';
+
 	$conducteur = new ConducteurController();
+	$vehicule = new VehiculeController();
 
 	if (isset($_GET['action'])) {
 
@@ -12,6 +15,10 @@
 		}
 		elseif($_GET['action'] == 'supprimerConducteur'){
 			$conducteur->delete($_GET['conducteurId']);
+		}
+		/* LES VEHICULES - CRUD */
+		elseif($_GET['action'] == 'ajoutVehicule'){
+			$vehicule->ajout();
 		}
 	}else{
 		/* Afficcher la liste des conducteurs*/
