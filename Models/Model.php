@@ -29,6 +29,18 @@ class Model
 		return $resultat;
 	}
 	
+	public function deleteById($id, $table)
+	{
+		$bdd = $this->getConnection();
+
+		$sql = $bdd->prepare(" DELETE FROM $table WHERE id_".$table." = ".$id);
+
+		if(!$sql->execute()){
+			die('OUPS!!!!!');
+		}
+		
+		header("Location: index.php");
+	}
 	
 }
 ?>
