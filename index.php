@@ -20,6 +20,8 @@
 		elseif($_GET['action'] == 'ajoutVehicule'){
 			$vehicule->list();
 			$vehicule->ajout();
+		} elseif($_GET['action'] == 'modifierVehicule') {
+			$conducteur->show($_GET['vehiculeId']);
 		}
 	}else{
 		/* Afficcher la liste des conducteurs*/

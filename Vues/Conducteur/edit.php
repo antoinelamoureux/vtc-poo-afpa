@@ -12,7 +12,7 @@
 				    <input type="text" class="form-control" name="nom" value="<?php echo $conducteur->getNom(); ?>">
 				  </div>
 				  
-				  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+				  <button type="submit" class="btn btn-primary" name="submit">Modifier le conducteur</button>
 				</form>
 			</div>
 		<?php

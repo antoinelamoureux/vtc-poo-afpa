@@ -71,5 +71,19 @@
 
 			header("Location: index.php");
 		}
+
+		public function update($id, $marque, $modele, $couleur, $immatriculation)
+	{
+		$bdd = Model::getConnection();
+
+		$sql = $bdd->prepare("UPDATE conducteur SET marque ='".$marque."', modele ='".$modele."', couleur ='".$couleur."', immatriculation ='".$immatriculation."' WHERE id_conducteur =" .$id);
+		
+
+		if(!$sql->execute()){
+			die("ATTENTION!!!!");
+		}
+
+		header("Location: index.php");
+	}
 	}
 ?>

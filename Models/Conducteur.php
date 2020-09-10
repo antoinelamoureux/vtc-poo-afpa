@@ -48,8 +48,6 @@ class Conducteur extends Model
 		header("Location: index.php");
 	}
 
-	
-
 	public function update($id, $prenom, $nom)
 	{
 		$bdd = Model::getConnection();
