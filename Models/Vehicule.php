@@ -69,21 +69,21 @@
 				die("ATTENTION!!!!");
 			}
 
-			header("Location: index.php");
+			header("Location: ?action=afficherVehicule");
 		}
 
 		public function update($id, $marque, $modele, $couleur, $immatriculation)
 	{
 		$bdd = Model::getConnection();
 
-		$sql = $bdd->prepare("UPDATE conducteur SET marque ='".$marque."', modele ='".$modele."', couleur ='".$couleur."', immatriculation ='".$immatriculation."' WHERE id_conducteur =" .$id);
+		$sql = $bdd->prepare("UPDATE vehicule SET marque ='".$marque."', modele ='".$modele."', couleur ='".$couleur."', immatriculation ='".$immatriculation."' WHERE id_vehicule =" .$id);
 		
 
 		if(!$sql->execute()){
 			die("ATTENTION!!!!");
 		}
 
-		header("Location: index.php");
+		header("Location: ?action=afficherVehicule");
 	}
 	}
 ?>

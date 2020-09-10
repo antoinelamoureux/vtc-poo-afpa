@@ -3,26 +3,26 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Nom</th>
+      <th scope="col">Conducteur</th>
+      <th scope="col">Véhicule</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <?php
-      foreach ($tous_les_conducteurs as $conducteur) {
+      foreach ($liste_associations as $association) {
         echo "<tr>";
-        echo "<td>".$conducteur->getIdConducteur()."</td>";
-        echo "<td>".$conducteur->getPrenom()."</td>";
-        echo "<td>".$conducteur->getNom()."</td>";
-        echo "<td><a href='?action=modifierConducteur&conducteurId=".$conducteur->getIdConducteur()."'><img src='./Ressources/img/edit.png' width='50'></a>
+        echo "<td>".$association->getIdAssociation()."</td>";
+        echo "<td>".$association->getConducteur()."</td>";
+        echo "<td>".$association->getVehicule()."</td>";
+        echo "<td><a href='?action=modifierAssociation&associationId=".$association->getIdAssociation()."'><img src='./Ressources/img/edit.png' width='50'></a>
         </td>";
         ?>
-        <td><img src='./Ressources/img/delete.png' width='20' data-toggle="modal" data-target="#vtc-<?php echo $conducteur->getIdConducteur(); ?>"></td>
+        <td><img src='./Ressources/img/delete.png' width='20' data-toggle="modal" data-target="#vtc-<?php echo $association->getIdAssociation(); ?>"></td>
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="vtc-<?php echo $conducteur->getIdConducteur(); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="vtc-<?php echo $association->getIdAssociation(); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -32,11 +32,11 @@
                 </button>
               </div>
               <div class="modal-body">
-                supprimer: <?php echo $conducteur->getPrenom()." ".$conducteur->getNom(); ?>
+                Supprimer: <?php echo $association->getConducteur()." ".$association->getVehicule(); ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                <a href="?action=supprimerConducteur&conducteurId='<?php echo $conducteur->getIdConducteur(); ?>'">
+                <a href="?action=supprimerAssociation&associationId='<?php echo $association->getIdAssociation() ?>'">
                   <button type="button" class="btn btn-danger">Oui</button>
                 </a>
               </div>

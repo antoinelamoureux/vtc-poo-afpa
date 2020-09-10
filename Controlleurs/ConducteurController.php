@@ -21,7 +21,7 @@ class ConducteurController
 
 			$nom = $conducteur->setNom($_POST['nom']);
 
-			$conducteur->create($prenom, $nom);
+			$conducteur->create($prenom, $nom);	
 		}
 	}
 

@@ -8,7 +8,7 @@ class Model
 	public function getConnection()
 	{
 		try{
-			$db =new PDO('mysql:host=localhost;dbname=vtc', "root", "");
+			$db =new PDO('mysql:host=localhost:8889;dbname=vtc_afpa_poo', "admin", "admin");
 		}
 		catch(PDOException $e){
 			print "Erreur";
@@ -39,7 +39,7 @@ class Model
 			die('OUPS!!!!!');
 		}
 		
-		header("Location: index.php");
+		$table == 'conducteur' ? header("Location: ?action=afficherConducteur") : header("Location: ?action=afficherVehicule");
 	}
 	
 	public function findAll($table)

@@ -1,3 +1,4 @@
+<div class="container">
 <table class="table">
   <thead>
     <tr>
@@ -18,7 +19,7 @@
         echo "<td>".$vehicule->getModele()."</td>";
         echo "<td>".$vehicule->getCouleur()."</td>";
         echo "<td>".$vehicule->getImmatriculation()."</td>";
-        echo "<td><a href='?action=modifierConducteur&conducteurId=".$vehicule->getIdVehicule()."'><img src='./Ressources/img/edit.png' width='50'></a>
+        echo "<td><a href='?action=modifierVehicule&vehiculeId=".$vehicule->getIdVehicule()."'><img src='./Ressources/img/edit.png' width='50'></a>
         </td>";
         ?>
         <td><img src='./Ressources/img/delete.png' width='20' data-toggle="modal" data-target="#vtc-<?php echo $vehicule->getIdVehicule(); ?>"></td>
@@ -51,3 +52,4 @@
     ?>
   </tbody>
 </table>
+</div>
