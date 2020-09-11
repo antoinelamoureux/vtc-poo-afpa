@@ -10,38 +10,45 @@ $vehicule = new VehiculeController();
 $association = new AssociationController();
 
 if (isset($_GET['action'])) {
-	/* LES CONDUCTEURS - CRUD */
-	if ($_GET['action'] == 'modifierConducteur') {
-		$conducteur->show($_GET['conducteurId']);
-	} elseif ($_GET['action'] == 'supprimerConducteur') {
-		$conducteur->delete($_GET['conducteurId']);
-	} elseif ($_GET['action'] == 'afficherConducteur') {
-		$conducteur->listConducteur();
-		$conducteur->nouveauConducteur();
-	}
-	/* LES VEHICULES - CRUD */ 
-	elseif ($_GET['action'] == 'ajoutVehicule') {
-		$vehicule->listVehicule();
-		$vehicule->ajout();
-	} elseif ($_GET['action'] == 'modifierVehicule') {
-		$vehicule->show($_GET['vehiculeId']);
-	} elseif ($_GET['action'] == 'supprimerVehicule') {
-		$vehicule->delete($_GET['vehiculeId']);
-	} elseif ($_GET['action'] == 'afficherVehicule') {
-		$vehicule->listVehicule();
-		$vehicule->ajout();
-	}
-	/* LES ASSOCIATIONS - CRUD */ 
-	elseif ($_GET['action'] == 'afficherAssociation') {
-		$association->afficherAssociation();
-		$association->ajoutAssociation();
-	} elseif ($_GET['action'] == 'modifierAssociation') {
-		$association->show($_GET['associationId']);
-	} elseif ($_GET['action'] == 'supprimerAssociation') {
-		$association->delete($_GET['associationId']);
-	} elseif ($_GET['action'] == 'afficherAssociation') {
-		$association->afficherAssociation();
-		$association->ajoutAssociation();
+	switch ($_GET['action']) {
+		case 'modifierConducteur':
+			$conducteur->show($_GET['conducteurId']);
+			break;
+		case 'supprimerConducteur':
+			$conducteur->delete($_GET['conducteurId']);
+			break;
+		case 'afficherConducteur':
+			$conducteur->listConducteur();
+			$conducteur->nouveauConducteur();
+			break;
+		case 'ajoutVehicule':
+			$vehicule->listVehicule();
+			$vehicule->ajout();
+			break;
+		case 'modifierVehicule':
+			$vehicule->show($_GET['vehiculeId']);
+			break;
+		case 'supprimerVehicule':
+			$vehicule->delete($_GET['vehiculeId']);
+			break;
+		case 'afficherVehicule':
+			$vehicule->listVehicule();
+			$vehicule->ajout();
+			break;
+		case 'afficherAssociation':
+			$association->afficherAssociation();
+			$association->ajoutAssociation();
+			break;
+		case 'modifierAssociation':
+			$association->show($_GET['associationId']);
+			break;
+		case 'supprimerAssociation':
+			$association->delete($_GET['associationId']);
+			break;
+		case 'afficherAssociation':
+			$association->afficherAssociation();
+			$association->ajoutAssociation();
+			break;			
 	}
 } else {
 	/* Afficher la liste des conducteurs*/
