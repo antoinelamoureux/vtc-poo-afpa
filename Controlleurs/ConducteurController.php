@@ -58,6 +58,13 @@ class ConducteurController
 		$conducteur = new Conducteur();
 		return $conducteur->deleteById($id,'conducteur');
 	}
+
+	public function countConducteurs()
+	{
+		$conducteur = new Conducteur();
+		$nbConducteurs =  $conducteur->findAll('conducteur');
+		return $nbConducteurs;
+	}
 }
 
 ?>

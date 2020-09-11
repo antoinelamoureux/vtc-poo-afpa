@@ -123,5 +123,18 @@ class Association extends Model{
 		}
 		
 		header("Location: ?action=afficherAssociation");
+    }
+    
+    public function findAssociations()
+	{
+		$bdd = Model::getConnection();
+
+		$sql = $bdd->prepare("SELECT * FROM association_vehicule_conducteur");
+
+		$sql->execute();
+
+		$resultat = $sql->fetchAll(PDO::FETCH_CLASS, 'association');
+
+		return $resultat;
 	}
 }

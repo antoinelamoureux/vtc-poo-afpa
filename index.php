@@ -44,9 +44,14 @@ if (isset($_GET['action'])) {
 		$association->ajoutAssociation();
 	}
 } else {
-	/* Afficcher la liste des conducteurs*/
+	/* Afficher la liste des conducteurs*/
 	$conducteur->listConducteur();
 
 	/* Ajout de nouveau conducteur */
 	$conducteur->nouveauConducteur();
+
+	$nbConducteurs = count($conducteur->countConducteurs());
+	$nbVehicules = count($vehicule->countVehicules());
+	$nbAssociations = count($association->countAssociations());
+	require_once "./Vues/informations.php";
 }

@@ -64,5 +64,12 @@ public function show($id)
 		$vehicule = new Vehicule();
 		return $vehicule->deleteById($id,'vehicule');
 	}
+
+	public function countVehicules()
+	{
+		$vehicule = new Vehicule();
+		$nbVehicules = $vehicule->findAll('vehicule');
+		return $nbVehicules;
+	}
 }
 ?>

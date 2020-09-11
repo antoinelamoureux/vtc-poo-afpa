@@ -49,6 +49,13 @@ class AssociationController
 	{
         $association = new Association();
         return $association->deleteAssociationById($id);
+    }
+    
+    public function countAssociations()
+	{
+		$association = new Association();
+		$nbAssociations =  $association->findAssociations();
+		return $nbAssociations;
 	}
 
 }
